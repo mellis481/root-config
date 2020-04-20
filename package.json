@@ -6,11 +6,6 @@
     "format": "prettier --write './**'",
     "build": "webpack --mode=production"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "pretty-quick --staged && eslint src"
-    }
-  },
   "devDependencies": {
     "@babel/core": "^7.7.4",
     "@babel/preset-env": "^7.7.4",
