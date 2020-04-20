@@ -1,1 +1,3 @@
-# root-config
+# Microfrontend root-config
+
+Run `npm run start`.
