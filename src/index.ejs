@@ -18,18 +18,23 @@
         "@mf-demo/root-config": "//localhost:9000/mf-demo-root-config.js",
         "@mf-demo/navbar": "//localhost:9001/mf-demo-navbar.js",
         "@mf-demo/employees": "//localhost:9002/mf-demo-employees.js",
+        "@mf-demo/employee-details": "//localhost:4200/main.js",
+        "@mf-demo/users": "//localhost:8080/js/app.js",        
         "rxjs": "https://cdn.jsdelivr.net/npm/@esm-bundle/rxjs/system/rxjs.min.js",
         "rxjs/operators": "https://cdn.jsdelivr.net/npm/@esm-bundle/rxjs/system/rxjs-operators.min.js"
       }
     }
   </script>
   <% } %>
+  <script src="https://unpkg.com/zone.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/import-map-overrides/dist/import-map-overrides.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/systemjs/dist/system.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/systemjs/dist/extras/amd.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/systemjs/dist/extras/named-exports.min.js"></script>
 </head>
 <body>
+  <nav id="mf-navbar"></nav>
+  <div id="mf-content"></div>
   <script>
     System.import('@mf-demo/root-config');
     // System.import('@mf-demo/styleguide');

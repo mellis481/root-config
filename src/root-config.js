@@ -13,10 +13,10 @@ registerApplication(
   isActive.employees
 );
 
-// registerApplication(
-//   "@react-mf/planets",
-//   () => System.import("@react-mf/planets"),
-//   isActive.planets
-// );
+registerApplication(
+  "@mf-demo/employee-details",
+  () => System.import("@mf-demo/employee-details"),
+  isActive.employeeDetails
+);
 
 start();
