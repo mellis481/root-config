@@ -1,18 +1,12 @@
-export function prefix(location, ...prefixes) {
-  return prefixes.some(
-    (prefix) => location.href.indexOf(`${location.origin}/${prefix}`) !== -1
-  );
-}
-
 export function navbar(location) {
-  // The navbar is always active
-  return true;
+  return true; // The navbar is always active
 }
 
 export function employees(location) {
-  return prefix(location, "employees");
+  return location.pathname === "/employees";
 }
 
 export function employeeDetails(location) {
-  return prefix(location, "employee-details");
+  const regex = /^\/employees\/\d+?$/;
+  return location.pathname.match(regex);
 }
