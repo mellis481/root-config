@@ -12,7 +12,7 @@ registerApplication(
 registerApplication({
   name: "@mf-demo/employees",
   app: () => System.import("@mf-demo/employees"),
-  activeWhen: (location) => location.pathname === "/employees"
+  activeWhen: location => location.pathname === "/employees"
 });
 
 registerApplication({
