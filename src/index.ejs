@@ -7,7 +7,6 @@
   <title>Microfrontend Demo</title>
   <meta name="importmap-type" content="systemjs-importmap" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-  <!-- <script type="systemjs-importmap" src="https://storage.googleapis.com/react.microfrontends.app/importmap.json"></script> -->
   <% if (isLocal) { %>
   <script type="systemjs-importmap">
     {
@@ -18,7 +17,6 @@
         "@mf-demo/root-config": "//localhost:9000/mf-demo-root-config.js",
         "@mf-demo/navbar": "//localhost:9001/mf-demo-navbar.js",
         "@mf-demo/employees": "//localhost:9002/mf-demo-employees.js",
-        "@mf-demo/employee-details": "//localhost:4200/main.js",
         "rxjs": "https://cdn.jsdelivr.net/npm/@esm-bundle/rxjs/system/rxjs.min.js",
         "rxjs/operators": "https://cdn.jsdelivr.net/npm/@esm-bundle/rxjs/system/rxjs-operators.min.js"
       }
