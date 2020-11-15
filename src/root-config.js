@@ -1,24 +1,25 @@
 import { registerApplication, start } from "single-spa";
-import * as isActive from "./activity-functions";
 
-// Simple usage
-registerApplication(
-  "@mf-demo/navbar",
-  () => System.import("@mf-demo/navbar"),
-  isActive.navbar
-);
+const microfrontends = ["@mf-demo/navbar", "@mf-demo/employees", "@mf-demo/employee-details"]
 
-//Config with more expressive API
+const contentRootElement = document.getElementById('mf-content');
+microfrontends.forEach(name => {
+  const microFrontendElement = document.createElement('div');
+  // microFrontendElement.attachShadow({ mode: 'open' });
+  microFrontendElement.setAttribute('id', `single-spa-application:${name}`);
+  contentRootElement.appendChild(microFrontendElement);
+})
+
 registerApplication({
-  name: "@mf-demo/employees",
-  app: () => System.import("@mf-demo/employees"),
-  activeWhen: (location) => location.pathname === "/employees"
+  name: "@mf-demo/navbar",
+  app: () => System.import("@mf-demo/navbar"),
+  activeWhen: (location) => true
 });
 
 registerApplication({
-  name: "@mf-demo/employee-details",
-  app: () => System.import("@mf-demo/employee-details"),
-  activeWhen: isActive.employeeDetails
+  name: "@mf-demo/employees",
+  app: () => System.import("@mf-demo/employees"),
+  activeWhen: (location) => true
 });
 
 start();
