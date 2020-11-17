@@ -1,15 +1,18 @@
 import { registerApplication, start } from "single-spa";
 
-registerApplication({
-  name: "@mf-demo/navbar",
-  app: () => System.import("@mf-demo/navbar"),
-  activeWhen: (location) => true
-});
+const microfrontends = ["@mf-demo/navbar", "@mf-demo/employees"]
 
-registerApplication({
-  name: "@mf-demo/employees",
-  app: () => System.import("@mf-demo/employees"),
-  activeWhen: (location) => true
-});
+const contentRootElement = document.getElementById('mf-content');
+microfrontends.forEach(name => {
+  const microFrontendElement = document.createElement('div');
+  microFrontendElement.setAttribute('id', `single-spa-application:${name}`);
+  contentRootElement.appendChild(microFrontendElement);
+
+  registerApplication({
+    name,
+    app: () => System.import(name),
+    activeWhen: (location) => true
+  });
+})
 
 start();
