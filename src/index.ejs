@@ -17,6 +17,7 @@
         "@mf-demo/root-config": "//localhost:9000/mf-demo-root-config.js",
         "@mf-demo/navbar": "//localhost:9001/mf-demo-navbar.js",
         "@mf-demo/employees": "//localhost:9002/mf-demo-employees.js",
+        "@mf-demo/employee-details": "//localhost:4200/main.js",
         "rxjs": "https://cdn.jsdelivr.net/npm/@esm-bundle/rxjs/system/rxjs.min.js",
         "rxjs/operators": "https://cdn.jsdelivr.net/npm/@esm-bundle/rxjs/system/rxjs-operators.min.js"
       }
@@ -30,7 +31,14 @@
   <script src="https://cdn.jsdelivr.net/npm/systemjs/dist/extras/named-exports.min.js"></script>
 </head>
 <body>
-  <div id="mf-content"></div>
+  <nav id="mf-navbar"></nav>
+  <div class="container-fluid mt-3">
+    <div class="row">
+      <div class="col-sm-12">
+        <div id="mf-content"></div>
+      </div>
+    </div>
+  </div>  
   <script>
     System.import('@mf-demo/root-config');
   </script>
